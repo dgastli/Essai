@@ -40,17 +40,21 @@ var Main = React.createClass({
         headerHeight={30}
         rowGetter={this._rowGetter}
         rowsCount={this.state.dataList.getSize()}
-        width={600}
+        width={750}
         height={600}
         scrollTop={this.props.top}
         scrollLeft={this.props.left}
         overflowX={controlledScrolling ? "hidden" : "auto"}
         overflowY={controlledScrolling ? "hidden" : "auto"}>
-        <ColumnGroup
-          fixed={true}
-          label="Name">
 
 
+
+          <Column
+            fixed={true}
+            label="First Name"
+            dataKey="firstName"
+            width={150}
+          />
           <Column
             fixed={true}
             label="Last Name"
@@ -59,11 +63,23 @@ var Main = React.createClass({
           />
           <Column
             fixed={true}
-            label="date"
-            dataKey="date"
+            label="city"
+            dataKey="city"
             width={150}
           />
-        </ColumnGroup>
+          <Column
+            fixed={true}
+            label="avartar"
+            dataKey="avartar"
+            width={150}
+          />
+          <Column
+            fixed={true}
+            label="email"
+            dataKey="email"
+            width={150}
+          />
+
 
       </Table>
     );
