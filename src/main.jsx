@@ -1,5 +1,3 @@
-
-
 var ROWS = 10;
 
 var FakeObjectDataListStore = require('./FakeObjectDataListStore');
@@ -19,8 +17,11 @@ var Main = React.createClass({
   },
 
   getInitialState() {
+    console.log("dorr");
+
     return {
       dataList: new FakeObjectDataListStore(ROWS)
+
     }
   },
 
@@ -39,8 +40,8 @@ var Main = React.createClass({
         headerHeight={30}
         rowGetter={this._rowGetter}
         rowsCount={this.state.dataList.getSize()}
-        width={800}
-        height={800}
+        width={600}
+        height={600}
         scrollTop={this.props.top}
         scrollLeft={this.props.left}
         overflowX={controlledScrolling ? "hidden" : "auto"}
@@ -56,8 +57,14 @@ var Main = React.createClass({
             dataKey="lastName"
             width={150}
           />
+          <Column
+            fixed={true}
+            label="date"
+            dataKey="date"
+            width={150}
+          />
         </ColumnGroup>
-        
+
       </Table>
     );
   }
